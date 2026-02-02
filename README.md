@@ -6,180 +6,195 @@ Repositori ini berisi kumpulan file **HTML + JavaScript** yang berfungsi sebagai
 
 ## 📁 Daftar File & Penjelasan
 
-### 1. `array.html`
-Membahas **Array** dalam JavaScript.
+Bagian ini menjelaskan **fungsi, tujuan, dan konsep utama** dari setiap file. Semua contoh menggunakan **JavaScript standar (tanpa framework)** dan ditulis untuk pemula.
 
-Contoh materi:
-- Membuat array
-- Mengakses elemen array
-- Method penting: `push()`, `pop()`, `join()`, `length`
+---
+
+### 1. `array.html`
+**Array** digunakan untuk menyimpan banyak nilai dalam satu variabel.
+
+Dipakai untuk:
+- Menyimpan daftar data (nama, angka, objek)
+- Melakukan iterasi data
+
+Konsep utama:
+- Index array dimulai dari 0
+- Array bersifat dinamis
 
 ---
 
 ### 2. `bigint.html`
-Menjelaskan **BigInt**, tipe data untuk bilangan bulat yang sangat besar.
+**BigInt** adalah tipe data untuk bilangan bulat yang melebihi batas aman `Number`.
 
-Contoh materi:
-- Deklarasi BigInt (`123n`)
-- Operasi aritmatika BigInt
-- Perbedaan BigInt dan Number
+Dipakai untuk:
+- Perhitungan angka sangat besar
+- Kriptografi, ID besar, data finansial
+
+Catatan:
+- Ditandai dengan akhiran `n`
+- Tidak bisa dicampur langsung dengan `Number`
 
 ---
 
 ### 3. `boolean.html`
-Membahas **Boolean** (`true` dan `false`).
+**Boolean** hanya memiliki dua nilai: `true` dan `false`.
 
-Contoh materi:
-- Nilai boolean
-- Boolean hasil perbandingan
-- Penggunaan dalam kondisi (`if`)
+Dipakai untuk:
+- Logika program
+- Percabangan (`if`, `while`)
+
+Sumber nilai Boolean:
+- Hasil perbandingan
+- Konversi nilai (truthy / falsy)
 
 ---
 
 ### 4. `date.html`
-Membahas objek **Date**.
+Objek **Date** digunakan untuk mengelola waktu dan tanggal.
 
-Contoh materi:
-- Membuat tanggal
-- Mengambil tahun, bulan, hari
-- Format tanggal sederhana
+Dipakai untuk:
+- Menampilkan tanggal sekarang
+- Menghitung umur, waktu, deadline
+
+Catatan:
+- Bulan dimulai dari 0 (Januari = 0)
 
 ---
 
 ### 5. `encode.html`
-Menjelaskan fungsi **encoding URL**.
+Digunakan untuk **mengamankan URL**.
 
-Contoh materi:
+Dipakai untuk:
+- Parameter URL
+- Data query string
+
+Fungsi utama:
 - `encodeURI()`
 - `decodeURI()`
-- Kegunaan encoding pada URL
 
 ---
 
 ### 6. `eval.html`
-Membahas fungsi **`eval()`**.
+`eval()` menjalankan kode JavaScript dari string.
 
-Contoh materi:
-- Menjalankan kode JavaScript dari string
-- Contoh sederhana evaluasi ekspresi
+Dipakai untuk:
+- Contoh konsep evaluasi kode
 
-⚠️ Catatan: `eval()` berbahaya jika digunakan sembarangan.
+⚠️ **Tidak disarankan untuk produksi** karena risiko keamanan.
 
 ---
 
 ### 7. `json.html`
-Membahas **JSON (JavaScript Object Notation)**.
+**JSON** adalah format pertukaran data paling umum di web.
 
-Contoh materi:
-- `JSON.parse()`
-- `JSON.stringify()`
-- Konversi object ↔ JSON
+Dipakai untuk:
+- API
+- Penyimpanan dan transfer data
+
+Fungsi utama:
+- `JSON.parse()` → string ke object
+- `JSON.stringify()` → object ke string
 
 ---
 
 ### 8. `map.html`
-Membahas objek **Map**.
+**Map** menyimpan pasangan key–value seperti Object, tapi lebih fleksibel.
 
-Contoh materi:
-- Membuat Map
-- `set()`, `get()`, `has()`
-- Perbedaan Map dan Object
+Kelebihan Map:
+- Key bisa tipe apa saja
+- Urutan data terjaga
 
 ---
 
 ### 9. `math.html`
-Membahas objek **Math**.
+Objek **Math** menyediakan fungsi matematika.
 
-Contoh materi:
-- `Math.round()`
-- `Math.random()`
-- `Math.max()` dan `Math.min()`
+Dipakai untuk:
+- Pembulatan angka
+- Angka acak
+- Operasi matematika umum
 
 ---
 
 ### 10. `number.html`
-Membahas tipe data **Number**.
+**Number** adalah tipe data numerik utama di JavaScript.
 
-Contoh materi:
-- Bilangan integer & desimal
-- `toString()`
-- `toFixed()`
+Dipakai untuk:
+- Perhitungan
+- Representasi angka
+
+Catatan:
+- JavaScript menggunakan floating point
 
 ---
 
 ### 11. `object.html`
-Membahas **Object** dalam JavaScript.
+**Object** adalah struktur data paling dasar di JavaScript.
 
-Contoh materi:
-- Membuat object
-- Mengakses properti
-- Method dalam object
+Dipakai untuk:
+- Representasi entitas (user, produk)
+- Struktur data kompleks
 
 ---
 
 ### 12. `proxy.html`
-Membahas **Proxy** (Meta Programming).
+**Proxy** memungkinkan intersepsi operasi pada object.
 
-Contoh materi:
-- Membungkus object dengan Proxy
-- Trap `get`
-- Kontrol akses properti
+Dipakai untuk:
+- Validasi
+- Logging
+- Kontrol akses
 
 ---
 
 ### 13. `reflect.html`
-Membahas objek **Reflect**.
+**Reflect** menyediakan method standar untuk operasi object.
 
-Contoh materi:
-- `Reflect.get()`
-- `Reflect.set()`
-- Hubungan Reflect dan Proxy
+Dipakai bersama Proxy untuk:
+- Operasi aman
+- Meta programming
 
 ---
 
 ### 14. `regexp.html`
-Membahas **Regular Expression (RegExp)**.
+**Regular Expression** digunakan untuk pencocokan pola teks.
 
-Contoh materi:
-- Pola regex
-- Method `search()`
-- Pencocokan teks
+Dipakai untuk:
+- Validasi input
+- Pencarian teks
 
 ---
 
 ### 15. `sample.json`
-File **contoh data JSON**.
+File JSON statis sebagai **sumber data contoh**.
 
-Digunakan oleh `sample.html` untuk:
-- Latihan membaca JSON
-- Simulasi data API
+Dipakai oleh:
+- `sample.html`
+- Latihan fetch dan parsing JSON
 
 ---
 
 ### 16. `set.html`
-Membahas objek **Set**.
+**Set** menyimpan nilai unik.
 
-Contoh materi:
-- Nilai unik dalam Set
-- `add()`, `has()`
-- Perbedaan Set dan Array
+Dipakai untuk:
+- Menghapus duplikasi
+- Koleksi data unik
 
 ---
 
 ### 17. `string.html`
-Membahas **String**.
+**String** digunakan untuk teks.
 
-Contoh materi:
-- Panjang string
-- `slice()`, `replace()`
+Dipakai untuk:
 - Manipulasi teks
+- Format output
 
 ---
 
 ### 18. `symbol.html`
-Membahas **Symbol**, tipe data unik di JavaScript.
+**Symbol** adalah identifier unik.
 
-Contoh materi:
-- Membuat Symbol
-- Symbol sebagai key object
+Dipakai untuk:
+- Key tersembunyi pada object
 - Menghindari konflik properti
