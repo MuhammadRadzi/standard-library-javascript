@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Eval</title>
+</head>
+
+<body>
+
+	<h1>JavaScript eval()</h1>
+
+	<h2>1. Evaluasi Ekspresi</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Evaluasi Statement</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Hasil eval()</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Kenapa eval() **tidak disarankan**</h2>
+	<p id="demo4"></p>
+
+	<script>
+		// 1) Evaluasi ekspresi
+		let x = 10;
+		let y = 20;
+		let text = "x * y";
+		let result1 = eval(text); // mengembalikan 200
+		document.getElementById("demo1").textContent =
+			`eval("x * y") → ${result1}`;
+
+		// 2) Evaluasi statement
+		let statements = "x = x + y";
+		let result2 = eval(statements); // eksekusi statement
+		document.getElementById("demo2").textContent =
+			`eval("x = x + y") → x sekarang: ${x}`;
+
+		// 3) Hasil eval bisa dipakai langsung
+		let sumVal = eval("5 + 7");
+		document.getElementById("demo3").textContent =
+			`eval("5 + 7") → ${sumVal}`;
+
+		// 4) Kenapa tidak disarankan
+		document.getElementById("demo4").textContent =
+			"eval() mengeksekusi kode dari string → berbahaya & riskan!";
+	</script>
+
+</body>
+
+</html>

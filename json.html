@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+</head>
+
+<body>
+
+	<h1>JavaScript JSON</h1>
+
+	<h2>1. JSON.parse()</h2>
+	<p id="demo1"></p>
+
+	<h2>2. JSON.stringify()</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Menyimpan & Membaca dari localStorage</h2>
+	<p id="demo3"></p>
+
+	<script>
+		// 1. JSON.parse(): Mengubah JSON string menjadi objek
+		const jsonString = '{"name":"John","age":31,"city":"New York"}';
+		const obj1 = JSON.parse(jsonString);
+
+		document.getElementById("demo1").innerHTML =
+			"JSON string → Object: " + obj1.name + ", " + obj1.age + ", " + obj1.city;
+
+		// 2. JSON.stringify(): Mengubah objek menjadi JSON string
+		const user = { name: "Alice", age: 25, city: "Jakarta" };
+		const userJSON = JSON.stringify(user);
+
+		document.getElementById("demo2").innerHTML =
+			"Object → JSON string: " + userJSON;
+
+		// 3. Menyimpan ke localStorage dan mengambilnya
+		localStorage.setItem("testJSON", userJSON);
+		const savedText = localStorage.getItem("testJSON");
+		const savedObj = JSON.parse(savedText);
+
+		document.getElementById("demo3").innerHTML =
+			"Dari localStorage: " + savedObj.name + ", " + savedObj.city;
+	</script>
+
+</body>
+
+</html>

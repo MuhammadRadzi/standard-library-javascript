@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Map</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Map</h1>
+
+	<h2>1. Membuat Map</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Menambah / Mengubah Nilai</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Mengambil Nilai</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Cek & Hapus</h2>
+	<p id="demo4"></p>
+
+	<h2>5. size & Iterasi</h2>
+	<p id="demo5"></p>
+
+	<script>
+		// 1) Membuat Map
+		const myMap = new Map([
+			["apel", 50],
+			["pisang", 30],
+			["jeruk", 20]
+		]);
+		document.getElementById("demo1").textContent =
+			"Map awal: " + JSON.stringify([...myMap]);
+
+		// 2) Menambah & Mengubah Nilai
+		myMap.set("manggis", 15);
+		myMap.set("apel", 55); // ubah nilai
+		document.getElementById("demo2").textContent =
+			"Set apel → 55, tambah manggis → 15";
+
+		// 3) Mengambil Nilai
+		const nilaiApel = myMap.get("apel");
+		document.getElementById("demo3").textContent =
+			"Nilai apel: " + nilaiApel;
+
+		// 4) Cek & Hapus
+		const adaPisang = myMap.has("pisang");
+		myMap.delete("pisang");
+		document.getElementById("demo4").textContent =
+			"Ada pisang? " + adaPisang + ", setelah delete → " + JSON.stringify([...myMap]);
+
+		// 5) size & Iterasi
+		const sizeMap = myMap.size;
+		let text = "";
+		myMap.forEach((value, key) => {
+			text += key + ":" + value + " ";
+		});
+		document.getElementById("demo5").textContent =
+			"size: " + sizeMap + ", isi: " + text;
+	</script>
+
+</body>
+
+</html>

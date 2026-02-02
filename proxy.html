@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Proxy</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Proxy</h1>
+
+	<h2>1. Proxy Sederhana (get / set)</h2>
+	<pre id="demo1"></pre>
+
+	<h2>2. Proxy dengan Reflect (get / set aman)</h2>
+	<pre id="demo2"></pre>
+
+	<h2>3. Validasi lewat Proxy</h2>
+	<pre id="demo3"></pre>
+
+	<h2>4. Virtual Property (fullName)</h2>
+	<pre id="demo4"></pre>
+
+	<script>
+		// 1) Proxy dasar: intercept get dan set
+		const user1 = { name: "Jan", age: 40 };
+		const proxy1 = new Proxy(user1, {
+			get(target, prop) {
+				return `GET (${prop}): ${target[prop]}`;
+			},
+			set(target, prop, value) {
+				target[prop] = value;
+				return true;
+			}
+		});
+		proxy1.name = "John";
+		let out1 = proxy1.name + " | " + proxy1.age;
+
+		document.getElementById("demo1").textContent = out1;
+
+		// 2) Proxy dengan Reflect
+		const user2 = { name: "Jane", age: 30 };
+		const proxy2 = new Proxy(user2, {
+			get(target, prop) {
+				return `GET: ${Reflect.get(target, prop)}`;
+			},
+			set(target, prop, value) {
+				return Reflect.set(target, prop, value);
+			}
+		});
+		proxy2.age = 35;
+		let out2 = proxy2.name + " | " + proxy2.age;
+		document.getElementById("demo2").textContent = out2;
+
+		// 3) Proxy untuk validasi 
+		const user3 = { age: 25 };
+		const proxy3 = new Proxy(user3, {
+			set(target, prop, value) {
+				if (prop === "age" && value < 0) {
+					return "Age tidak boleh negatif!";
+				}
+				return Reflect.set(target, prop, value);
+			}
+		});
+		proxy3.age = -5; // tidak diubah
+		document.getElementById("demo3").textContent = `Age: ${user3.age}`;
+
+		// 4) Virtual property
+		const person = { first: "John", last: "Doe" };
+		const proxy4 = new Proxy(person, {
+			get(target, prop) {
+				if (prop === "fullName") {
+					return `${target.first} ${target.last}`;
+				}
+				return Reflect.get(target, prop);
+			}
+		});
+		document.getElementById("demo4").textContent = `Full name: ${proxy4.fullName}`;
+	</script>
+
+</body>
+
+</html>

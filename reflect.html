@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Reflect</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Reflect Examples</h1>
+
+	<h2>1. Reflect.has()</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Reflect.deleteProperty()</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Reflect.get() & Reflect.set()</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Reflect.apply()</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Reflect.construct()</h2>
+	<p id="demo5"></p>
+
+	<h2>6. Reflect.ownKeys()</h2>
+	<p id="demo6"></p>
+
+	<script>
+		// 1. Reflect.has(): cek properti
+		const person1 = { name: "John", age: 40 };
+		document.getElementById("demo1").textContent =
+			"has name? " + Reflect.has(person1, "name");
+
+		// 2. Reflect.deleteProperty(): hapus properti
+		const person2 = { name: "Jane", age: 30 };
+		Reflect.deleteProperty(person2, "age");
+		document.getElementById("demo2").textContent =
+			"after delete age: " + JSON.stringify(person2);
+
+		// 3. Reflect.get() & Reflect.set()
+		const user = { name: "Alex", age: 25 };
+		Reflect.set(user, "age", 26);
+		document.getElementById("demo3").textContent =
+			"age updated: " + Reflect.get(user, "age");
+
+		// 4. Reflect.apply(): panggil fungsi
+		function greet(msg) {
+			return msg + ", " + this.name;
+		}
+		const p = { name: "Budi" };
+		const message = Reflect.apply(greet, p, ["Hello"]);
+		document.getElementById("demo4").textContent = message;
+
+		// 5. Reflect.construct(): mirip keyword new
+		const arr = Reflect.construct(Array, [1, 2, 3]);
+		document.getElementById("demo5").textContent =
+			"Array length: " + arr.length;
+
+		// 6. Reflect.ownKeys(): dapatkan semua key (termasuk simbol)
+		const sym = Symbol("secret");
+		const myObj = { a: 1, [sym]: 2 };
+		document.getElementById("demo6").textContent =
+			"keys: " + Reflect.ownKeys(myObj);
+	</script>
+
+</body>
+
+</html>

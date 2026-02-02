@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>encodeURI & encodeURIComponent</title>
+</head>
+
+<body>
+
+	<h1>JavaScript URI Encoding</h1>
+
+	<h2>1. encodeURI()</h2>
+	<p id="demo1"></p>
+
+	<h2>2. decodeURI()</h2>
+	<p id="demo2"></p>
+
+	<h2>3. encodeURIComponent()</h2>
+	<p id="demo3"></p>
+
+	<h2>4. decodeURIComponent()</h2>
+	<p id="demo4"></p>
+
+	<script>
+		// Contoh URL dengan spasi dan karakter khusus
+		const url = "https://example.com/search?query=hello world & name=ståle";
+
+		// 1. encodeURI: encode seluruh URL, tapi tidak encode karakter yang punya makna di URL
+		const encodedURI = encodeURI(url);
+		document.getElementById("demo1").textContent =
+			"encodeURI: " + encodedURI;
+
+		// 2. decodeURI: balik ke asli
+		document.getElementById("demo2").textContent =
+			"decodeURI: " + decodeURI(encodedURI);
+
+		// 3. encodeURIComponent: encode bagian komponen (termasuk ? & =)
+		const encodedComponent = encodeURIComponent(url);
+		document.getElementById("demo3").textContent =
+			"encodeURIComponent: " + encodedComponent;
+
+		// 4. decodeURIComponent: balik ke asli
+		document.getElementById("demo4").textContent =
+			"decodeURIComponent: " + decodeURIComponent(encodedComponent);
+	</script>
+
+</body>
+
+</html>

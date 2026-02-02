@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Symbol</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Symbols</h1>
+
+	<h2>1. Membuat Symbol</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Symbol Unik</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Symbol sebagai Object Key</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Symbol tidak ikut JSON.stringify</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Symbol.for() (Global Symbol)</h2>
+	<p id="demo5"></p>
+
+	<script>
+		// 1. Membuat Symbol
+		const sym1 = Symbol();
+		const sym2 = Symbol("deskripsi");
+
+		document.getElementById("demo1").textContent =
+			"Symbol dibuat: " + sym1.toString();
+
+		// 2. Symbol selalu unik
+		const a = Symbol("test");
+		const b = Symbol("test");
+
+		document.getElementById("demo2").textContent =
+			"Symbol('test') === Symbol('test') → " + (a === b);
+
+		// 3. Symbol sebagai key object
+		const secret = Symbol("secretKey");
+		const user = {
+			name: "Alex",
+			age: 20,
+			[secret]: "hidden value"
+		};
+
+		document.getElementById("demo3").textContent =
+			"Object name: " + user.name +
+			" | Symbol value: " + user[secret];
+
+		// 4. Symbol tidak ikut JSON
+		document.getElementById("demo4").textContent =
+			"JSON.stringify: " + JSON.stringify(user);
+
+		// 5. Symbol.for() (global symbol)
+		const g1 = Symbol.for("shared");
+		const g2 = Symbol.for("shared");
+
+		document.getElementById("demo5").textContent =
+			"Symbol.for sama? → " + (g1 === g2);
+	</script>
+
+</body>
+
+</html>

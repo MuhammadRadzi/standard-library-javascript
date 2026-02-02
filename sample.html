@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sample</title>
+</head>
+
+<body>
+
+	<h1>Sample JSON File</h1>
+
+	<h2>Data dari sample.json</h2>
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+
+	<script>
+		// Mengambil file JSON lokal
+		fetch("sample.json")
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById("demo1").textContent =
+					"Name: " + data.name;
+
+				document.getElementById("demo2").textContent =
+					"Age: " + data.age;
+
+				document.getElementById("demo3").textContent =
+					"City: " + data.city;
+
+				document.getElementById("demo4").textContent =
+					"Skills: " + data.skills.join(", ");
+			})
+			.catch(error => {
+				console.error("Error loading JSON:", error);
+			});
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>String</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Strings</h1>
+
+	<h2>1. Membuat String</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Quotes di Dalam String</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Template Strings (Backticks)</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Length dari String</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Escape Characters</h2>
+	<p id="demo5"></p>
+
+	<h2>6. String Object (Tidak Disarankan)</h2>
+	<p id="demo6"></p>
+
+	<script>
+		// 1) Membuat String
+		const text1 = "Hello World";
+		const text2 = 'Halo Dunia';
+		document.getElementById("demo1").innerHTML =
+			text1 + " | " + text2;
+
+		// 2) Quotes di dalam String
+		const quote1 = "It's alright";
+		const quote2 = 'He is called "Johnny"';
+		document.getElementById("demo2").innerHTML =
+			quote1 + " | " + quote2;
+
+		// 3) Template Strings (Backticks)
+		const name = "Alex";
+		const greeting = `Hello, ${name}! Welcome.`;
+		document.getElementById("demo3").innerHTML = greeting;
+
+		// 4) Length dari String
+		const sample = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		document.getElementById("demo4").innerHTML =
+			"Length: " + sample.length;
+
+		// 5) Escape Characters
+		const escaped = "We are the so-called \"Vikings\" from the north.";
+		document.getElementById("demo5").innerHTML = escaped;
+
+		// 6) String Object (tidak disarankan)
+		const prim = "John";
+		const objStr = new String("John");
+		document.getElementById("demo6").innerHTML =
+			"typeof prim: " + typeof prim +
+			" | typeof objStr: " + typeof objStr;
+	</script>
+
+</body>
+
+</html>

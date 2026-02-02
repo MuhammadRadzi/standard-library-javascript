@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Date</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Date Object</h1>
+
+	<h2>1. Tanggal & Waktu Saat Ini</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Buat Date dari String</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Buat Date dengan Komponen</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Date dari Milliseconds</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Format String Tanggal</h2>
+	<p id="demo5"></p>
+
+	<script>
+		// 1) Tanggal & waktu saat ini
+		const now = new Date();
+		document.getElementById("demo1").textContent =
+			"Sekarang: " + now;
+
+		// 2) Buat Date dari string
+		const dateFromString = new Date("October 13, 2014 11:13:00");
+		document.getElementById("demo2").textContent =
+			"Dari string: " + dateFromString;
+
+		// 3) Buat Date dari komponen angka
+		const dateFromParts = new Date(2025, 6, 24, 14, 30, 0);
+		document.getElementById("demo3").textContent =
+			"Dari angka: " + dateFromParts;
+
+		// 4) Buat Date dari milliseconds
+		const dateFromMs = new Date(86400000); // 1 hari setelah epoch
+		document.getElementById("demo4").textContent =
+			"Dari ms: " + dateFromMs;
+
+		// 5) Beberapa format output
+		document.getElementById("demo5").textContent =
+			"toDateString(): " + now.toDateString() +
+			" | toUTCString(): " + now.toUTCString() +
+			" | toISOString(): " + now.toISOString();
+	</script>
+
+</body>
+
+</html>

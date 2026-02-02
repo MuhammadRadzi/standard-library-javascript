@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BigInt</title>
+</head>
+
+<body>
+	<h1>JavaScript BigInt Example</h1>
+
+	<h2>1. BigInt vs Number</h2>
+	<pre id="demo1"></pre>
+
+	<h2>2. Cara Membuat BigInt</h2>
+	<pre id="demo2"></pre>
+
+	<h2>3. Operasi Aritmatika</h2>
+	<pre id="demo3"></pre>
+
+	<h2>4. BigInt & Number tidak bisa dicampur langsung</h2>
+	<pre id="demo4"></pre>
+
+	<h2>5. Konversi BigInt ⇄ Number</h2>
+	<pre id="demo5"></pre>
+
+	<script>
+		// 1. BigInt vs Number
+		let normalNum = 9007199254740991;           // batas aman Number
+		let nextNum = 9007199254740992;             // kehilangan presisi
+		let big1 = 9007199254740992n;                // BigInt
+
+		document.getElementById("demo1").textContent =
+			`Number (max safe): ${normalNum}\n` +
+			`Number (next): ${nextNum}\n` +
+			`BigInt: ${big1}`;
+
+		// 2. Cara membuat BigInt
+		let big2 = 1234567890123456789012345n;
+		let big3 = BigInt("1234567890123456789012345");
+
+		document.getElementById("demo2").textContent =
+			`Literal BigInt: ${big2}\n` +
+			`BigInt() constructor: ${big3}`;
+
+		// 3. Operasi Aritmatika
+		let sum = big2 + big3;
+		let multiply = big2 * 2n;
+
+		document.getElementById("demo3").textContent =
+			`Sum: ${sum}\n` +
+			`Multiply: ${multiply}`;
+
+		// 4. BigInt dan Number tidak bisa dicampur langsung
+		try {
+			let mix = big2 + 5; // ❌ error
+		} catch (e) {
+			document.getElementById("demo4").textContent = `Error: ${e.message}`;
+		}
+
+		// 5. Konversi BigInt ↔ Number
+		let backToNumber = Number(big1);
+		let toBigInt = BigInt(10);
+
+		document.getElementById("demo5").textContent =
+			`BigInt → Number: ${backToNumber}\n` +
+			`Number → BigInt: ${toBigInt}`;
+	</script>
+
+</body>
+
+</html>

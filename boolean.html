@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Booleans</h1>
+
+    <h2>1. Boolean Values</h2>
+    <p id="demo1"></p>
+
+    <h2>2. Boolean dari Perbandingan</h2>
+    <p id="demo2"></p>
+
+    <h2>3. Boolean dalam If Statement</h2>
+    <p id="demo3"></p>
+
+    <h2>4. Boolean() Function</h2>
+    <p id="demo4"></p>
+
+    <h2>5. Truthy & Falsy Values</h2>
+    <p id="demo5"></p>
+
+    <h2>6. Boolean Object (Tidak Disarankan)</h2>
+    <p id="demo6"></p>
+
+    <script>
+        // 1. Boolean values
+        let x = true;
+        let y = false;
+        document.getElementById("demo1").innerHTML =
+            "true = " + x + "<br>false = " + y;
+
+        // 2. Boolean from comparison
+        document.getElementById("demo2").innerHTML =
+            "5 > 3 : " + (5 > 3) + "<br>" +
+            "5 == 8 : " + (5 == 8);
+
+        // 3. Boolean in if statement
+        let hour = new Date().getHours();
+        let greeting;
+
+        if (hour < 18) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+
+        document.getElementById("demo3").innerHTML = greeting;
+
+        // 4. Boolean() function
+        document.getElementById("demo4").innerHTML =
+            "Boolean(10 > 9): " + Boolean(10 > 9) + "<br>" +
+            "Boolean(''): " + Boolean("") + "<br>" +
+            "Boolean(0): " + Boolean(0);
+
+        // 5. Truthy & Falsy
+        document.getElementById("demo5").innerHTML =
+            "Boolean(100): " + Boolean(100) + "<br>" +
+            "Boolean('Hello'): " + Boolean("Hello") + "<br>" +
+            "Boolean(null): " + Boolean(null);
+
+        // 6. Boolean object (avoid)
+        let a = false;
+        let b = new Boolean(false);
+
+        document.getElementById("demo6").innerHTML =
+            "typeof false = " + typeof a + "<br>" +
+            "typeof new Boolean(false) = " + typeof b;
+    </script>
+
+</body>
+
+</html>

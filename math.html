@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Math Object</h1>
+
+	<h2>1. Math Constants</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Round, Floor, Ceil</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Power & Square Root</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Absolute Value</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Sign & Trunc</h2>
+	<p id="demo5"></p>
+
+	<h2>6. Random Number</h2>
+	<p id="demo6"></p>
+
+	<h2>7. Logarithms</h2>
+	<p id="demo7"></p>
+
+	<script>
+		// 1. Constants
+		document.getElementById("demo1").textContent =
+			"PI: " + Math.PI +
+			", E: " + Math.E +
+			", SQRT2: " + Math.SQRT2;
+
+		// 2. Round, Floor, Ceil
+		const n = 4.7;
+		document.getElementById("demo2").textContent =
+			"round(4.7): " + Math.round(n) +
+			", floor(4.7): " + Math.floor(n) +
+			", ceil(4.7): " + Math.ceil(n);
+
+		// 3. Power & Square Root
+		document.getElementById("demo3").textContent =
+			"2^3: " + Math.pow(2, 3) +
+			", sqrt(64): " + Math.sqrt(64);
+
+		// 4. Absolute Value
+		document.getElementById("demo4").textContent =
+			"abs(-7): " + Math.abs(-7);
+
+		// 5. Sign & Trunc
+		document.getElementById("demo5").textContent =
+			"sign(-5): " + Math.sign(-5) +
+			", trunc(4.9): " + Math.trunc(4.9);
+
+		// 6. Random
+		document.getElementById("demo6").textContent =
+			"random [0–1): " + Math.random();
+
+		// 7. Logarithms
+		document.getElementById("demo7").textContent =
+			"log(1): " + Math.log(1) +
+			", log2(8): " + Math.log2(8) +
+			", log10(1000): " + Math.log10(1000);
+	</script>
+
+</body>
+
+</html>

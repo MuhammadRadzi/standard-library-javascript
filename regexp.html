@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Regular Expressions</h1>
+
+	<h2>1. Basic Search dengan search()</h2>
+	<p id="demo1"></p>
+
+	<h2>2. match() untuk semua hasil</h2>
+	<p id="demo2"></p>
+
+	<h2>3. replace() untuk mengganti teks</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Flags: g & i</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Metakarakter & Character Classes</h2>
+	<p id="demo5"></p>
+
+	<h2>6. Assertions (Awal / Akhir String)</h2>
+	<p id="demo6"></p>
+
+	<script>
+		// 1. Basic search
+		let text1 = "Visit W3Schools";
+		let idx = text1.search(/W3Schools/i);
+		document.getElementById("demo1").textContent =
+			"search index: " + idx; // case-insensitive
+
+		// 2. match() untuk semua hasil
+		let text2 = "Is this all there is?";
+		let matches = text2.match(/is/g); // global flag
+		document.getElementById("demo2").textContent =
+			"match all: " + matches;
+
+		// 3. replace() untuk mengganti teks
+		let text3 = "Visit Microsoft!";
+		let replaced = text3.replace(/Microsoft/i, "W3Schools");
+		document.getElementById("demo3").textContent =
+			"replace: " + replaced;
+
+		// 4. Flags: global & case-insensitive
+		let text4 = "Black, white, red, green, blue";
+		let colors = text4.match(/red|green|blue/g);
+		document.getElementById("demo4").textContent =
+			"colored found: " + colors;
+
+		// 5. Metakarakter & character classes
+		let text5 = "Give 100%!";
+		let digits = text5.match(/\d/g);  // all digits
+		let words = text5.match(/\w/g);   // word characters
+		document.getElementById("demo5").textContent =
+			"digits: " + digits + ", words: " + words;
+
+		// 6. Assertions (awal / akhir string)
+		let startMatch = /^Hello/.test("Hello World!");
+		let endMatch = /World!$/.test("Hello World!");
+		document.getElementById("demo6").textContent =
+			"starts with Hello: " + startMatch +
+			", ends with World!: " + endMatch;
+
+	</script>
+
+</body>
+
+</html>

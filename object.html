@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Objects</h1>
+
+	<h2>1. Membuat Objek</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Mengakses Properti</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Menambahkan & Mengubah Properti</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Object Methods</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Constructor Function</h2>
+	<p id="demo5"></p>
+
+	<script>
+		// 1. Create an Object
+		const car = { type: "Fiat", model: "500", color: "white" };
+		document.getElementById("demo1").textContent =
+			"Mobil: " + car.type + " " + car.model + " (" + car.color + ")";
+
+		// 2. Accessing Properties
+		document.getElementById("demo2").textContent =
+			"car.type → " + car.type + ", car['model'] → " + car["model"];
+
+		// 3. Add/Change Properties
+		car.owner = "Alex";
+		car.color = "red";
+		document.getElementById("demo3").textContent =
+			"owner: " + car.owner + ", new color: " + car.color;
+
+		// 4. Object Methods
+		const person1 = {
+			firstName: "John",
+			lastName: "Doe",
+			fullName: function () {
+				return this.firstName + " " + this.lastName;
+			}
+		};
+		document.getElementById("demo4").textContent =
+			"Full name: " + person1.fullName();
+
+		// 5. Constructor Function
+		function Person(first, last, age, eye) {
+			this.firstName = first;
+			this.lastName = last;
+			this.age = age;
+			this.eyeColor = eye;
+		}
+
+		const myFather = new Person("John", "Doe", 50, "blue");
+		document.getElementById("demo5").textContent =
+			"Father: " + myFather.firstName + " (" + myFather.age + " yrs)";
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Set</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Sets</h1>
+
+	<h2>1. Membuat Set & Unik</h2>
+	<p id="demo1"></p>
+
+	<h2>2. add(), has(), delete()</h2>
+	<p id="demo2"></p>
+
+	<h2>3. size (jumlah elemen)</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Looping dengan forEach</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Menggunakan entries()</h2>
+	<p id="demo5"></p>
+
+	<script>
+		// 1. Membuat Set & Unik
+		const uniqueSet = new Set([1, 2, 2, 3, 4, 4]);
+		document.getElementById("demo1").innerHTML =
+			"Unik: " + [...uniqueSet];
+
+		// 2. add(), has(), delete()
+		uniqueSet.add(5);
+		const hasTwo = uniqueSet.has(2);
+		uniqueSet.delete(3);
+		document.getElementById("demo2").innerHTML =
+			"Has 2? " + hasTwo + "<br>" +
+			"Set setelah delete 3: " + [...uniqueSet];
+
+		// 3. size
+		document.getElementById("demo3").innerHTML =
+			"Jumlah elemen: " + uniqueSet.size;
+
+		// 4. Looping with forEach
+		let text4 = "";
+		uniqueSet.forEach(value => { text4 += value + " "; });
+		document.getElementById("demo4").innerHTML =
+			"Looping: " + text4;
+
+		// 5. entries()
+		let text5 = "";
+		for (const entry of uniqueSet.entries()) {
+			text5 += "[" + entry + "] ";
+		}
+		document.getElementById("demo5").innerHTML =
+			"Entries: " + text5;
+	</script>
+
+</body>
+
+</html>

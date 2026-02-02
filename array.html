@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Arrays</h1>
+
+	<h2>1. Membuat Array</h2>
+	<p id="demo1"></p>
+
+	<h2>2. Mengakses Elemen</h2>
+	<p id="demo2"></p>
+
+	<h2>3. Mengubah Elemen</h2>
+	<p id="demo3"></p>
+
+	<h2>4. Panjang Array</h2>
+	<p id="demo4"></p>
+
+	<h2>5. Loop Array</h2>
+	<ul id="demo5"></ul>
+
+	<h2>6. Menambah Elemen</h2>
+	<p id="demo6"></p>
+
+	<h2>7. Tipe Data Array</h2>
+	<p id="demo7"></p>
+
+	<script>
+		// 1. Create an Array
+		const cars = ["Saab", "Volvo", "BMW"];
+		document.getElementById("demo1").innerHTML = cars;
+
+		// 2. Accessing Array Elements
+		document.getElementById("demo2").innerHTML = cars[0];
+
+		// 3. Changing an Array Element
+		cars[0] = "Opel";
+		document.getElementById("demo3").innerHTML = cars;
+
+		// 4. Array Length
+		document.getElementById("demo4").innerHTML = cars.length;
+
+		// 5. Looping Through an Array
+		let text = "";
+		for (let i = 0; i < cars.length; i++) {
+			text += "<li>" + cars[i] + "</li>";
+		}
+		document.getElementById("demo5").innerHTML = text;
+
+		// 6. Adding Array Elements
+		cars.push("Toyota");
+		document.getElementById("demo6").innerHTML = cars;
+
+		// 7. Arrays are Objects
+		document.getElementById("demo7").innerHTML =
+			typeof cars + " (array)";
+	</script>
+
+</body>
+
+</html>
